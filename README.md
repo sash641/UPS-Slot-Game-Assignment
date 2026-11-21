@@ -1,9 +1,12 @@
-A slot machine built in Unity 6 for the Slot Game Assignment. Every reel outcome is generated independently, and a win occurs only when all three symbols match.
+A slot machine built in Unity 6 for the Slot Game Assignment. Every reel outcome is generated using an outcome model that accounts for RNG, symbol probabilities, payouts, and RTP (theoretical), basically a real slot machine model just scaled down. For the sake of simplicity, a win occurs only when all three symbols match.
 
-## Play
+### Play
 
-1. Open `Build/WebGL/index.html` through a local web server. Browsers block some WebGL files when opened directly from disk.
-2. From the repository root, a quick option is `python -m http.server 8080 --directory Build/WebGL`.
+1. Open a terminal in the project directory.
+2. Start a local web server:
+
+   ```powershell
+   py -m http.server 8080 --directory Build
 3. Visit `http://localhost:8080` and press **PULL THE LEVER**. Each spin costs 10 credits.
 
 
@@ -49,18 +52,19 @@ Therefore, theoretical RTP is `9.6 / 10 = 96%`, with a 4% house edge. RTP is a l
 ```text
 Assets/
   Editor/
-  Resources/SlotArt/    Imported assignment artwork
+  SlotMachineArt/    Imported assignment artwork
   Scripts/Core/         Rules, outcomes, and RNG
   Scripts/UI/           Reel presentation
   Tests/Editor/         Edit Mode tests
-Build/WebGL/            WebGL output
+  Animations/           Animations for the machine
+  Prefabs/              Prefaabs for the reels, Symbols
+  Sound/                Sound effects
+Build/            WebGL output
 ```
 
 ## To Do
-1. Game audio.
-2. Particle effects for better visual flair.
-3. Tune RTP further.
-4. Add more fun features, maybe take it in a roguelike direction.
+1. Tune RTP further.
+2. Add more fun features, maybe take it in a roguelike direction.
 - Wild symbols
 - Scatter symbols
 - Bonus rounds
