@@ -7,7 +7,7 @@ A slot machine built in Unity 6 for the Slot Game Assignment. Every reel outcome
 
    ```powershell
    py -m http.server 8080 --directory Build
-3. Visit `http://localhost:8080` and press **PULL THE LEVER**. Each spin costs 10 credits.
+3. Visit `http://localhost:8080` and **PULL THE LEVER**. Each spin costs 10 credits.
 
 
 ## Rules and payouts
@@ -19,7 +19,7 @@ A slot machine built in Unity 6 for the Slot Game Assignment. Every reel outcome
 | Bell | 5 / 20 (25%) | 200 credits |
 | Cherries | 10 / 20 (50%) | 33 credits |
 
-The player starts with 100 credits. **RESET CREDITS** restores the starting balance you run out.
+The player starts with 100 credits. **RESET CREDITS** restores the starting balance if you run out.
 
 ## Math model
 
@@ -32,7 +32,7 @@ For this assignment, I made it so each reel uses the same 20 slot strip and is s
 | Bell | 5 | 1.5625% | 200 |
 | Cherries | 10 | 12.500% | 33 |
 
-The hit frequency is `14.5%`; expected payout is `9.6`, which makes credits on a 10-credit bet:
+The hit frequency is `14.5%`; the expected payout is `9.6`, which makes credits on a 10-credit bet:
 
 `(0.1³ × 1000) + (0.15³ × 400) + (0.25³ × 200) + (0.5³ × 33) = 9.6`
 
@@ -57,7 +57,7 @@ Assets/
   Scripts/UI/           Reel presentation
   Tests/Editor/         Edit Mode tests
   Animations/           Animations for the machine
-  Prefabs/              Prefaabs for the reels, Symbols
+  Prefabs/              Prefabs for the reels, Symbols
   Sound/                Sound effects
 Build/            WebGL output
 ```
